@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Machine Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+</head>
+
+<body>
+
+    <div class="container fluid ">
+        <div class="row ">
+            <div class="col-sm-12 text-center ">
+                <div class="card w-75 align-center border-danger ">
+                    <div class="card-body align-center">
+                        <h5 class="card-title">Electrical Machine Calculator</h5>
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Voltage Regulation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Efficiency</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h1>Voltage Regulation</h1>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="VNL">Voltage No Load</label>
+                                        <input id="vnl" type="text" class="form-control" name="VNL" placeholder="V No Load">
+                                    </div>
+                                    <div class="form-group col-sm-6 ">
+                                        <label for="VFL">Voltage Full Load</label>
+                                        <input id="vfl" type="text" class="form-control" name="lastname" placeholder="V Full Load">
+                                    </div>
+                                </div>
+                                <!-- <input id="vnl" type="text" placeholder="V no Load">
+                                <input id="vfl" type="text" placeholder="V full Load"> -->
+                                <div class="form-row align-center">
+                                    <div class="form-group col-sm-12 align-center">
+                                        <button onclick="calVol()" id="calVol">Cal Voltage</button>
+                                    </div>
+
+                                </div>
+
+                                <h3 id="result1"></h3>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <h1>Efficiency</h1>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6 col-md-4">
+                                        <label for="tv">Terminal Voltage</label>
+                                        <input id="vol" type="text" class="form-control" name="tv" placeholder="Terminal V">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-md-4">
+                                        <label for="inputPassword4">Load current</label>
+                                        <input id="cur" type="text" class="form-control" name="LC" placeholder="Load I">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-md-4">
+                                        <label for="ar">Armature Resistance</label>
+                                        <input id="res" type="text" class="form-control" name="ar" placeholder="Armature R">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6 col-md-4">
+                                        <label for="AI">Armature Current</label>
+                                        <input id="curA" type="text" class="form-control" name="AI" placeholder="Armature I">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-md-4">
+                                        <label for="FI">Field Current</label>
+                                        <input id="curF" type="text" class="form-control" name="lastname" placeholder="Field I">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-md-4">
+                                        <label for="cl">Core Loss</label>
+                                        <input id="cor" type="text" class="form-control" name="cl" placeholder="I Loss">
+                                    </div>
+                                </div>
+
+                                <div class="form-row align-center">
+                                    <div class="form-group col-sm-12 align-center">
+                                        <button onclick="calEff()" id="calEff">Cal Efficiency</button>
+                                    </div>
+
+                                </div>
+
+                                <h3 id="result2"></h3>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <!-- <script src="jquery.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>
